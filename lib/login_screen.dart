@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
               MaterialPageRoute(builder: (_) => const HomeScreen()),
             );
           },
-          child: const Text('Login (Mock)'),
+          child: const Text('Login'),
         ),
       ),
     );
