@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'chat_screen.dart';
+import 'profile_screen.dart';
+import 'settings_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,11 +21,28 @@ class HomeScreen extends StatelessWidget {
       ),
       drawer: Drawer(
         child: ListView(
-          children: const [
-            DrawerHeader(child: Text('Menu')),
-            ListTile(title: Text('Message Boards')),
-            ListTile(title: Text('Profile')),
-            ListTile(title: Text('Settings')),
+          children: [
+            const DrawerHeader(child: Text('Menu')),
+            ListTile(
+              title: const Text('Message Boards'),
+              onTap: () => Navigator.pop(context),
+            ),
+            ListTile(
+              title: const Text('Profile'),
+              onTap:
+                  () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const ProfileScreen()),
+                  ),
+            ),
+            ListTile(
+              title: const Text('Settings'),
+              onTap:
+                  () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const SettingsScreen()),
+                  ),
+            ),
           ],
         ),
       ),
@@ -69,4 +88,5 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+}
 }
